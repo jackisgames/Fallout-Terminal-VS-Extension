@@ -10,6 +10,7 @@ using System.Media;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Timers;
 
 namespace com.jacky.foconsole
 {
@@ -37,9 +38,9 @@ namespace com.jacky.foconsole
         SoundPlayer powerOnAudio = new SoundPlayer(Properties.Resources.poweron);
         SoundPlayer powerOffAudio = new SoundPlayer(Properties.Resources.poweroff);
         Stream[] keystrokeAudioStreams;
-        const int numKeyAudio = 150;
+        const int numKeyAudio = 30;
 
-        
+        Timer timer = new Timer();
 
         public FOTerminal(IWpfTextView view)
         {
@@ -59,6 +60,11 @@ namespace com.jacky.foconsole
 
             }
             //
+            timer.Interval = 50f;
+            timer.Elapsed += this.OnTimeElapsed;
+            timer.Start();
+            
+            //
             //play console boot audio
             //
             powerOnAudio.Play();
@@ -66,7 +72,12 @@ namespace com.jacky.foconsole
             this.view.TextBuffer.Changed += this.OnTextBufferChanged;
             this.view.Closed += this.OnViewClosed;
         }
-       
+
+        private void OnTimeElapsed(object sender, ElapsedEventArgs e)
+        {
+            canPlaySound = true;
+        }
+
         private void OnViewClosed(object sender, EventArgs e)
         {
             powerOffAudio.Play();
@@ -74,13 +85,19 @@ namespace com.jacky.foconsole
         //play keystroke audio
         SoundPlayer sp = new SoundPlayer();
         int keyAudioQueue = 0;
+        bool canPlaySound = true;
         private void OnTextBufferChanged(object sender, TextContentChangedEventArgs e)
         {
             if (e.Changes != null)
             {
-                sp.Stream = keystrokeAudioStreams[keyAudioQueue];
-                sp.Play();
-                keyAudioQueue = (keyAudioQueue + 1) % numKeyAudio;
+                if (canPlaySound)
+                {
+                    sp.Stream = keystrokeAudioStreams[keyAudioQueue];
+                    sp.Stream.Seek(0, SeekOrigin.Begin);
+                    sp.Play();
+                    keyAudioQueue = (keyAudioQueue + 1) % numKeyAudio;
+                    canPlaySound = false;
+                }
             }
         }
     }
