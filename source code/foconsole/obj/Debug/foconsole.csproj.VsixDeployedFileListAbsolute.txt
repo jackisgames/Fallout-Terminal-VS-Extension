@@ -1,0 +1,10 @@
+C:\Users\JackyR\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Jacky Riawan\foconsole\1.0\\extension.vsixmanifest
+C:\Users\JackyR\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Jacky Riawan\foconsole\1.0\\foconsole.dll
+C:\Users\JackyR\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Jacky Riawan\foconsole\1.0\\foconsole.pdb
+C:\Users\JackyR\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Jacky Riawan\fallout console\1.0\\foconsole.dll
+C:\Users\JackyR\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Jacky Riawan\fallout console\1.0\\foconsole.pdb
+C:\Users\JackyR\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Jacky Riawan\fallout console\1.0\\extension.vsixmanifest
+C:\Users\Jacky\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Jacky Riawan\fallout console\1.0\\foconsole.dll
+C:\Users\Jacky\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Jacky Riawan\fallout console\1.0\\foconsole.pdb
+C:\Users\Jacky\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Jacky Riawan\fallout console\1.0\\extension.vsixmanifest
+C:\Users\Jacky\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Jacky Riawan\fallout console\1.0\\icon.ico
